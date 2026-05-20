@@ -286,9 +286,10 @@ function register({ getDownloads, saveDownloads }) {
         const extracted = extractFirstSubtitleFromZip(zipBuffer);
         if (!extracted)
           return { ok: false, error: "No subtitle file found in SubDL ZIP" };
+        const safeName = path.basename(extracted.name);
         const tmpPath = path.join(
           os.tmpdir(),
-          `streambert_sub_${Date.now()}_${extracted.name}`,
+          `streambert_sub_${Date.now()}_${safeName}`,
         );
         fs.writeFileSync(tmpPath, extracted.data);
         return {
