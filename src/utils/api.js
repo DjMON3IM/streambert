@@ -148,7 +148,7 @@ export const PLAYER_SOURCES = [
     colorParam: null, // vidsrc doesn't support color param
     langParam: "ds_lang", // ISO 639-1 language code
     params: {},
-    movieUrl: (id) => `https://vidsrcme.ru/embed/movie/${id}`,
+    movieUrl: (id) => `https://vidsrc-embed.ru/embed/movie/${id}`,
     tvUrl: (id, season, ep) =>
       `https://vidsrcme.ru/embed/tv/${id}/${season}/${ep}`,
   },
